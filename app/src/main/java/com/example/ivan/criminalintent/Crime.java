@@ -12,6 +12,7 @@ public class Crime {
     private UUID mId;
     private String mTitle;
     private Date mDate;
+    private boolean mSolved;
 
     public Date getDate() {
         return mDate;
@@ -40,5 +41,13 @@ public class Crime {
 
     public void setTitle(String mTitle) {
         this.mTitle = mTitle;
+    }
+
+    public boolean isSolved() {
+        return mSolved;
+    }
+
+    public void setSolved(boolean solved) {
+        mSolved = solved;
     }
 }
