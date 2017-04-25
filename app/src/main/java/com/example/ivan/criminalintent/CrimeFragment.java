@@ -57,7 +57,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy"gi);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy");
         mDateButton.setText(dateFormat.format(mCrime.getDate()).toString());
         mDateButton.setEnabled(false);
 
