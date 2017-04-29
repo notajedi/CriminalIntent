@@ -69,8 +69,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy");
-        mDateButton.setText(dateFormat.format(mCrime.getDate()).toString());
+        updateUI();
         mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +89,11 @@ public class CrimeFragment extends Fragment {
         return v;
     }
 
+    private void updateUI() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy");
+        mDateButton.setText(dateFormat.format(mCrime.getDate()).toString());
+    }
+
     public static CrimeFragment newInstance(UUID crimId){
         Bundle args = new Bundle();
         args.putSerializable(ARG_CRIME_ID,crimId);
@@ -106,7 +110,7 @@ public class CrimeFragment extends Fragment {
         if(requestCode == REQUEST_CODE){
             Date date = (Date)data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
             mCrime.setDate(date);
-            mDateButton.setText(mCrime.getDate().toString());
+            updateUI();
         }
     }
 }
